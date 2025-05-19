@@ -6,15 +6,21 @@ import Contact from './pages/Contact';
 import Signup from './pages/Signup';
 import Signin from './pages/Signin';
 import Dashboard from './pages/Dashboard';
+import Header from './components/Header';
+import NavbarComponent from './components/NavbarComponent';
+import Services from './pages/Services';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
+       <Header />
+       <NavbarComponent />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
+          <Route path='/services' element={<Services />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/signin' element={<Signin />} />

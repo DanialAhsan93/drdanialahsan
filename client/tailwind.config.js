@@ -1,21 +1,15 @@
-// /** @type {import('tailwindcss').Config} */
-// export default {
-//   content: [],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+     "./node_modules/flowbite-react/**/*.js",
+    "./node_modules/flowbite/**/*.js",
+    "./src/**/*.{js,jsx,ts,tsx}", 
   ],
+    darkMode: 'class', // <-- this is crucial
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }
-
