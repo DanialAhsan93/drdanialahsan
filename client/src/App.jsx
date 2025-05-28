@@ -6,8 +6,8 @@ import Contact from './pages/Contact';
 import Signup from './pages/Signup';
 import Signin from './pages/Signin';
 import Dashboard from './pages/Dashboard';
-import Header from './components/Header';
-import NavbarComponent from './components/NavbarComponent';
+import Header from './components/header&navbar/Header';
+import NavbarComponent from './components/header&navbar/NavbarComponent';
 import Services from './pages/Services';
 
 function App() {

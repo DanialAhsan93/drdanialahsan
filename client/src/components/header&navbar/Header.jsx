@@ -6,9 +6,10 @@ import { GoClock } from "react-icons/go";
 
 function Header() {
   return (
-    <div className='bg-[#27477D]'>
-      <div className='border-b-black py-2'>
-        <div className='lg:flex sm:max-w-7xl mx-auto justify-between text-[12px] lg:text-[14px] text-white space-y-1 lg:space-y-0'>
+    <div className='bg-[#27477D] relative z-50 '>
+      <div className='border-b-black py-2 max-w-7xl mx-auto'>
+
+        <div className='md:flex sm:max-w-full mx-auto justify-between text-[12px] lg:text-[14px] text-white space-y-1 lg:space-y-0 sm:px-3'>
 
           <div className='flex items-center lg:ml-0 ml-2'>
             <span className='rounded-2xl p-[6px]  bg-[#06CCEC] mr-2 '>

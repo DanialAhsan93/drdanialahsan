@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/logo.png';
-import logoDark from '../assets/logoDark.png';
+import { logo, logoDark } from '../../data';
 import { FaMoon, FaSun } from "react-icons/fa";
 import { Button, Navbar, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from '../redux/theme/themeSlice';
+import { toggleTheme } from '../../redux/theme/themeSlice';
 
 
 function NavbarComponent() {
@@ -17,8 +16,8 @@ function NavbarComponent() {
 
 
   return (
-    <div className='border-b border-gray-200'>
-      <Navbar className=" max-w-7xl mx-auto flex justify-between py-5 " style={{ background: "transparent" }}>
+    <div className={` border-b border-gray-200 relative z-50 ${theme === 'light' ? 'bg-white' : 'dark:bg-[rgb(16,23,42)]'}`}>
+      <Navbar className={`max-w-7xl mx-auto flex justify-between py-5 ${theme === 'light' ? 'bg-white' : 'dark:bg-[rgb(16,23,42)]'}`}>
         <Link to={'/'} className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold flex items-center space-x-2'>
           <img src={theme === 'light' ? logo : logoDark} alt="logo" className='w-[40px] h-[40px]' />
           <div className='text-[#27477D] dark:text-gray-200'>

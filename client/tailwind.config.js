@@ -1,13 +1,49 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-     "./node_modules/flowbite-react/**/*.js",
+    "./node_modules/flowbite-react/**/*.js",
     "./node_modules/flowbite/**/*.js",
-    "./src/**/*.{js,jsx,ts,tsx}", 
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
-    darkMode: 'class', // <-- this is crucial
+  darkMode: 'class', // <-- this is crucial
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        'slide-diagonal': {
+          '0%': { transform: 'translate(0, 0)' },
+          '100%': { transform: 'translate(10px, -10px)' },
+        },
+        'slide-diagonal-2': {
+          '0%': { transform: 'translate(0, 0)' },
+          '100%': { transform: 'translate(10px, -10px)' },
+        },
+        'move-bottom-right': {
+          '0%': { transform: 'translate(0, 0)' },
+          '100%': { transform: 'translate(10px, 10px)' },
+        },
+        'move-top-left': {
+          '0%': { transform: 'translate(0, 0)' },
+          '100%': { transform: 'translate(-10px, -10px)' },
+        },
+        'move-bottom-left': {
+          '0%': { transform: 'translate(0, 0)' },
+          '100%': { transform: 'translate(-10px, 10px)' },
+        },
+
+      },
+      animation: {
+        'slide-diagonal': 'slide-diagonal 2s ease-in-out infinite alternate',
+        'slide-diagonal-2': 'slide-diagonal 2.5s ease-in-out infinite alternate',
+        'move-bottom-right': 'move-bottom-right 2s ease-in-out infinite alternate',
+        'move-top-left': 'move-top-left 2s ease-in-out infinite alternate',
+        'move-bottom-left': 'move-bottom-left 2s ease-in-out infinite alternate',
+
+
+      },
+      screens: {
+        '3xl': '2401px'
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
