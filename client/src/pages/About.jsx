@@ -6,7 +6,7 @@ function About() {
   return (
     <div className='max-w-full min-h-screen flex flex-wrap sm:flex-row flex-col'>
 
-      <div className='sm:w-[50%] w-full flex justify-center border border-1'>
+      <div className='sm:w-[50%] w-full flex justify-center'>
 
         <div className='sm:w-[85%] w-full flex flex-wrap items-center p-5 '>
           <p className='text-sm sm:py-0 py-5'>
@@ -30,7 +30,7 @@ function About() {
 
       </div>
 
-      <div className='sm:w-[50%] w-full flex justify-center border border-1'>
+      <div className='sm:w-[50%] w-full flex justify-center'>
         <div className='sm:w-[85%] w-full flex flex-wrap items-center '>
 
           {/* <div className='flex w-[200px] h-[200px] object-cover  rounded-full'>
