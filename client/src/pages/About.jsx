@@ -2,7 +2,7 @@ import React from 'react'
 
 function About() {
   return (
-    <div>About</div>
+    <div className='max-w-full min-h-screen'>About</div>
   )
 }
 

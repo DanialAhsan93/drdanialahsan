@@ -9,12 +9,15 @@ import Dashboard from './pages/Dashboard';
 import Header from './components/header&navbar/Header';
 import NavbarComponent from './components/header&navbar/NavbarComponent';
 import Services from './pages/Services';
+import Footercomp from './components/footercomp/Footercomp';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop />
        <Header />
        <NavbarComponent />
         <Routes>
@@ -26,6 +29,7 @@ function App() {
           <Route path='/signin' element={<Signin />} />
           <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
+        <Footercomp />
       </BrowserRouter>
 
     </>

@@ -11,6 +11,9 @@ import bgdotswhite from '../assets/bgdotswhite.png';
 import bgdotsblack from '../assets/bgdotsblack.png';
 import doctor from '../assets/doctor.png';
 import newdoc from '../assets/newdoc.png';
+import backpain from '../assets/backpain.png';
+import kneepain from '../assets/kneepain.png';
+import shoulderpain from '../assets/shoulderpain.png';
 
 export {
  back,
@@ -25,6 +28,9 @@ export {
  logo,
  logoDark,
  doctor,
- newdoc
+ newdoc,
+ backpain,
+ shoulderpain,
+ kneepain,
  
 }

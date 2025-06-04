@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../pages/home.css';
 import Bookbutton from '../Bookbutton.jsx';
 import { useSelector } from 'react-redux';
@@ -21,20 +21,47 @@ import {
 function Herosectionhome() {
 
   const { theme } = useSelector(state => state.theme);
+  const [flipped, setFlipped] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFlipped(prev => !prev);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className='flex justify-center sm:flex-row flex-col overflow-hidden sm:min-h-[80vh] relative'>
 
       <div className='flex flex-col justify-center sm:w-[50%]  sm:p-0 pl-5 min-h-[40vh]'>
+        <div className={`flipper ${flipped ? "flipped" : ""}`}>
 
-        <div className='lg:text-5xl sm:text-2xl text-3xl font-bold '>
-          Pain Care Clinic
-        </div>
-        <div className='lg:text-[28px] text-[18px] font-bold text-[#06CCEC] w-[70%] sm:mt-2 mt-4'>
-          Best treatment for healthy life
+          <div className='front'>
+            <div className='lg:text-5xl sm:text-2xl text-3xl font-bold '>
+              Dr <span className='px-2 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg ml-1'>
+                Danyal Ahsan
+              </span>
+            </div>
+            <div className='lg:text-[28px] text-[18px] font-bold text-[#06CCEC] w-[70%] sm:mt-2 mt-4'>
+              Dpt, Nmpt & Pain Speacialist
+            </div>
+          </div>
+
+
+          <div className="back sm:block flex flex-col items-end sm:pr-0 pr-5 sm:mt-0 ">
+            <div className='lg:text-4xl sm:text-3xl text-2xl font-bold '>
+              ڈاکٹر <span className='px-2 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg ml-1'>
+                د ا نیال ا حسن
+              </span>
+            </div>
+            <div className='lg:text-[20px] text-[18px] font-bold text-[#06CCEC] md:w-[70%] sm:mt-10 mt-7'>
+              ڈ ی پی ٹی ، این ایم پی ٹی ، پین اسپیشلسٹ
+            </div>
+          </div>
+
         </div>
 
-        <div className='mt-2'>
+        <div className='sm:mt-2'>
           <Bookbutton text={'Book Now'} />
         </div>
 

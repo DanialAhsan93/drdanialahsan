@@ -26,7 +26,7 @@ function Card({item, Icon}) {
           {item.description}
         </p>
 
-        <div className='w-full flex justify-center lg:mt-2 mt-0'>
+        <div className='w-full flex justify-center lg:mt-2 sm:mt-0 mt-4'>
           <Bookbutton text={'Book Now'} />
         </div>
 

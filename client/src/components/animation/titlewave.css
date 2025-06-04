@@ -1,0 +1,25 @@
+.wave-letter {
+  display: inline-block;
+  animation-name: pop;
+  animation-duration: 5s; /* total cycle: 2s wave + 3s pause */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  /* Active wave animation in first 20% of cycle */
+  10% {
+    transform: scale(1.3);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  /* 20% - 100% is just idle, nothing happens */
+}

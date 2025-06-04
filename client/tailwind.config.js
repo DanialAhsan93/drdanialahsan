@@ -29,6 +29,15 @@ export default {
           '0%': { transform: 'translate(0, 0)' },
           '100%': { transform: 'translate(-10px, 10px)' },
         },
+        'slideTilted': {
+          '0%, 100%': { transform: 'translateX(0) rotate(12deg)' },
+          '50%': { transform: 'translateX(50px) rotate(12deg)' },
+        },
+        'slideTiltedRL': {
+          '0%, 100%': { transform: 'translateX(50px) rotate(-12deg)' },
+          '50%': { transform: 'translateX(0) rotate(-12deg)' },
+        },
+
 
       },
       animation: {
@@ -37,7 +46,8 @@ export default {
         'move-bottom-right': 'move-bottom-right 2s ease-in-out infinite alternate',
         'move-top-left': 'move-top-left 2s ease-in-out infinite alternate',
         'move-bottom-left': 'move-bottom-left 2s ease-in-out infinite alternate',
-
+        'slide-tilted': 'slideTilted 3s ease-in-out infinite',
+        'slide-tilted-rl': 'slideTiltedRL 3s ease-in-out infinite',
 
       },
       screens: {

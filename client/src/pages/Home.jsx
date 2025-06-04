@@ -24,6 +24,8 @@ import {
 import Secondhalfhome from '../components/homesections/Secondhalfhome';
 import Card from '../components/Card.jsx';
 import Herosectionhome from '../components/homesections/Herosectionhome.jsx';
+import Fifthsection from '../components/homesections/Fifthsection.jsx';
+import Sixthsection from '../components/homesections/Sixthsection.jsx';
 
 
 
@@ -141,7 +143,7 @@ function Home() {
 
             </div>
 
-            <div className='flex flex-wrap sm:flex-row flex-col lg:justify-center sm:justify-around justify-center items-center lg:space-x-5 sm:space-x-0 lg:absolute  lg:top-48 lg:p-0 sm:p-5 p-5'>
+            {/* <div className='flex flex-wrap sm:flex-row flex-col lg:justify-center sm:justify-around justify-center items-center lg:space-x-5 sm:space-x-0 lg:absolute  lg:top-48 lg:p-0 sm:p-5 p-5'>
 
               {
                 servicesData && servicesData.map((item) => {
@@ -153,7 +155,7 @@ function Home() {
                 )
               }
 
-            </div>
+            </div> */}
 
 
           </div>
@@ -163,14 +165,16 @@ function Home() {
         </div>
 
         {/* Fourth section */}
-
-
         <Secondhalfhome />
+
+        {/* Fifth section */}
+        <Fifthsection />
+
+        {/* Sixth section */}
+        <Sixthsection />
 
 
       </div>
-
-
     </div>
 
 

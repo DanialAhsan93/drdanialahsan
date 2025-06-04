@@ -5,6 +5,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { Button, Navbar, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../../redux/theme/themeSlice';
+import TitleWave from '../animation/TitleWave';
 
 
 function NavbarComponent() {
@@ -18,12 +19,14 @@ function NavbarComponent() {
   return (
     <div className={` border-b border-gray-200 relative z-50 ${theme === 'light' ? 'bg-white' : 'dark:bg-[rgb(16,23,42)]'}`}>
       <Navbar className={`max-w-7xl mx-auto flex justify-between py-5 ${theme === 'light' ? 'bg-white' : 'dark:bg-[rgb(16,23,42)]'}`}>
-        <Link to={'/'} className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold flex items-center space-x-2'>
+        {/* <Link to={'/'} className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold flex items-center space-x-2'>
           <img src={theme === 'light' ? logo : logoDark} alt="logo" className='w-[40px] h-[40px]' />
           <div className='text-[#27477D] dark:text-gray-200'>
             Pain <span className='text-[#06CCEC]'>Care</span> Clinic
           </div>
-        </Link>
+        </Link> */}
+        <TitleWave theme={theme} logo={logo} logoDark={logoDark} />
+
 
 
         <div className='flex gap-2 md:order-2'>
