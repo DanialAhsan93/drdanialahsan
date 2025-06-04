@@ -1,0 +1,22 @@
+@keyframes riseAndHold {
+  0% {
+    transform: translate(-50%, 100%) scale(0.6);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 100%) scale(0.6);
+    opacity: 0;
+  }
+}
+
+.animate-rise-and-hold {
+  animation: riseAndHold 6s ease-in-out infinite;
+}

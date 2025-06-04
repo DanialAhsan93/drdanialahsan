@@ -14,6 +14,7 @@ import newdoc from '../assets/newdoc.png';
 import backpain from '../assets/backpain.png';
 import kneepain from '../assets/kneepain.png';
 import shoulderpain from '../assets/shoulderpain.png';
+import cityhospital  from '../assets/cityhospital.jpg';
 
 export {
  back,
@@ -32,5 +33,5 @@ export {
  backpain,
  shoulderpain,
  kneepain,
- 
+ cityhospital
 }
