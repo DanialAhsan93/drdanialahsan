@@ -1,4 +1,4 @@
-import { TextInput } from 'flowbite-react';
+import { Button, TextInput } from 'flowbite-react';
 import React from 'react'
 import { AiOutlineSafety } from 'react-icons/ai';
 import { FaPhone } from "react-icons/fa";
@@ -99,10 +99,10 @@ function Sixthsection() {
                 type='name'
                 required
                 style={{
-                  borderRadius:"25px",
-                  paddingLeft:'20px'
+                  borderRadius: "25px",
+                  paddingLeft: '20px'
                 }}
-                
+
               />
 
 
@@ -114,10 +114,10 @@ function Sixthsection() {
                 type='number'
                 required
                 style={{
-                  borderRadius:"25px",
-                  paddingLeft:'20px'
+                  borderRadius: "25px",
+                  paddingLeft: '20px'
                 }}
-                
+
               />
             </div>
             <div className='sm:w-[40%] w-full sm:mx-1 sm:my-3'>
@@ -127,10 +127,10 @@ function Sixthsection() {
                 type='name'
                 required
                 style={{
-                  borderRadius:"25px",
-                  paddingLeft:'20px'
+                  borderRadius: "25px",
+                  paddingLeft: '20px'
                 }}
-                
+
               />
             </div>
             <div className='sm:w-[40%] w-full sm:mx-1 sm:my-3'>
@@ -140,10 +140,10 @@ function Sixthsection() {
                 type='text'
                 required
                 style={{
-                  borderRadius:"25px",
-                  paddingLeft:'20px'
+                  borderRadius: "25px",
+                  paddingLeft: '20px'
                 }}
-                
+
               />
             </div>
             <div className='sm:w-[40%] w-full sm:mx-1 sm:my-3'>
@@ -153,12 +153,12 @@ function Sixthsection() {
                 type='number'
                 required
                 style={{
-                  borderRadius:"25px",
-                  paddingLeft:'20px',
-                  marginTop:'12px',
-                  
+                  borderRadius: "25px",
+                  paddingLeft: '20px',
+                  marginTop: '12px',
+
                 }}
-                
+
               />
             </div>
             <div className='sm:w-[40%] w-full sm:mx-1 sm:my-3'>
@@ -167,16 +167,16 @@ function Sixthsection() {
                 className='text-gray-400'
                 type='email'
                 style={{
-                  borderRadius:"25px",
-                  paddingLeft:'20px',
-                  marginTop:'12px',
-                  
+                  borderRadius: "25px",
+                  paddingLeft: '20px',
+                  marginTop: '12px',
+
                 }}
-                
+
               />
             </div>
 
-            <div className='w-full flex justify-center pt-4'> 
+            <div className='w-full flex justify-center pt-4'>
               <Bookbutton text={'Make an appointment'} />
             </div>
 

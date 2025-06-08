@@ -26,6 +26,7 @@ import Card from '../components/Card.jsx';
 import Herosectionhome from '../components/homesections/Herosectionhome.jsx';
 import Fifthsection from '../components/homesections/Fifthsection.jsx';
 import Sixthsection from '../components/homesections/Sixthsection.jsx';
+import Toggle from '../components/homesections/Toggle.jsx';
 
 
 
@@ -57,9 +58,9 @@ function Home() {
                   <img src={backblue} alt="backImage" className='rounded-tr-[3rem] rounded-bl-[3rem]' />
                 </div>
 
-                <div className='lg:w-[100px] lg:h-[100px] sm:w-[80px] sm:h-[80px] w-[60px] h-[60px] flex justify-center items-center z-10 absolute sm:top-0 sm:left-[50%] bg-[#06CCEC]/30 rounded-full lg:-translate-x-0 lg:-translate-y-0 sm:-translate-x-4 sm:-translate-y-9 -translate-x-5 -translate-y-2 '>
+                <div className={`lg:w-[100px] lg:h-[100px] sm:w-[80px] sm:h-[80px] w-[60px] h-[60px] flex justify-center items-center z-10 absolute sm:top-0 sm:left-[50%] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600/30 to-blue-500/30 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400/30 via-teal-500/30 to-teal-600/30 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'} rounded-full lg:-translate-x-0 lg:-translate-y-0 sm:-translate-x-4 sm:-translate-y-9 -translate-x-5 -translate-y-2 `}>
 
-                  <div className='lg:w-[80px] lg:h-[80px] sm:w-[60px] sm:h-[60px] w-[40px] h-[40px] flex justify-center items-center  bg-[#06CCEC] rounded-full '>
+                  <div className={`lg:w-[80px] lg:h-[80px] sm:w-[60px] sm:h-[60px] w-[40px] h-[40px] flex justify-center items-center ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'}  rounded-full `}>
                     <FaPlay className='lg:text-[30px] sm:text-[20px] text-[18px] text-white' />
                   </div>
 
@@ -77,16 +78,27 @@ function Home() {
 
           <div className='sm:w-[50%] flex items-center sm:justify-start justify-center order-1 sm:order-2 sm:my-0 my-20'>
 
-            <div className='3xl:w-[30%] 2xl:w-[40%] lg:w-[60%] sm:w-[75%] w-[65%] sm:pb-0 pb-7 lg:pl-7 sm:pl-7 sm:text-start text-center'>
+            <div className='3xl:w-[30%] 2xl:w-[40%] lg:w-[60%] sm:w-[75%] w-[65%] sm:pb-0 pb-7 lg:pl-7 sm:pl-7 sm:text-start text-center '>
+
               <div className='lg:text-3xl sm:text-2xl text-[20px] lg:py-1'>
                 Surprise your body with
                 <span className='text-[#06CCEC] sm:mr-1'>
                   extra care
                 </span>
               </div>
-              <p className='py-2 lg:text-[20px] sm:text-[14px]'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, similique distinctio quasi consequuntur quos Dignissimos, cupiditate sapiente.
-              </p>
+              <div className='3xl:h-[100px] 2xl:h-[130px] lg:h-[120px] md:h-[90px] sm:h-[100px] h-[130px]'>
+
+                <Toggle 
+               engPara={"Pain Care clinic is speacilized in treating conditions causing pain to Shoulder, Knees, Spine & ROM issues."} 
+               urduPara={" پین کیرکلینک کندھے،گھٹنوں،ریڑھ کی ہڈی اور رینج آف موشن مسائل کی وجہ بننے والی تکالیف کے علاج میں مہارت رکھتا ہے۔"} 
+               />
+
+              </div>
+              
+
+              {/* <p className='py-2 lg:text-[20px] sm:text-[14px]'>
+            پین کیرکلینک کندھے، گھٹنوں ، ریڑھ کی ہڈی اور رینج آف موشن مسائل کی وجہ بننے والی تکالیف کے علاج میں مہارت رکھتا ہے۔
+          </p> */}
 
               <div className='flex items-center sm:justify-start justify-center py-2'>
 

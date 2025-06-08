@@ -17,56 +17,32 @@ import {
   doctor,
   newdoc,
 } from '../../data/index.js';
+import Herotitle from '../animation/Herotitle.jsx';
 
 function Herosectionhome() {
 
   const { theme } = useSelector(state => state.theme);
-  const [flipped, setFlipped] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFlipped(prev => !prev);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className='flex justify-center sm:flex-row flex-col overflow-hidden sm:min-h-[80vh] relative'>
 
       <div className='flex flex-col justify-center sm:w-[50%]  sm:p-0 pl-5 min-h-[40vh]'>
-        <div className={`flipper ${flipped ? "flipped" : ""}`}>
 
-          <div className='front'>
-            <div className='lg:text-5xl sm:text-2xl text-3xl font-bold '>
-              Dr <span className='px-2 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg ml-1'>
-                Danyal Ahsan
-              </span>
-            </div>
-            <div className='lg:text-[28px] text-[18px] font-bold text-[#06CCEC] w-[70%] sm:mt-2 mt-4'>
-              Dpt, Nmpt & Pain Speacialist
-            </div>
+        <div className='relative'>
+          <Herotitle
+            color={`${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' :'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'} `}
+            size={'lg:text-5xl sm:text-2xl text-3xl'}
+            sizePara={'lg:text-[28px] text-[16px]'}
+            sizeUrdu={'lg:text-4xl sm:text-2xl'}
+          />
+          <div className=' absolute lg:bottom-8 lg:left-0 md:bottom-2 md:left-0 sm:bottom-3 sm:left-0 bottom-6 sleft-0'>
+            <Bookbutton text={'Book Now'} />
           </div>
-
-
-          <div className="back sm:block flex flex-col items-end sm:pr-0 pr-5 sm:mt-0 ">
-            <div className='lg:text-4xl sm:text-3xl text-2xl font-bold '>
-              ڈاکٹر <span className='px-2 bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg ml-1'>
-                د ا نیال ا حسن
-              </span>
-            </div>
-            <div className='lg:text-[20px] text-[18px] font-bold text-[#06CCEC] md:w-[70%] sm:mt-10 mt-7'>
-              ڈ ی پی ٹی ، این ایم پی ٹی ، پین اسپیشلسٹ
-            </div>
-          </div>
-
         </div>
 
-        <div className='sm:mt-2'>
-          <Bookbutton text={'Book Now'} />
-        </div>
-
-        <div className={`w-[350px] h-[350px] ${theme === 'light' ? 'bg-[#27477D]' : 'bg-[#06CCEC]'}  rounded-full absolute lg:-left-[200px] lg:-bottom-[225px] sm:-left-[200px] sm:-bottom-[280px]  animate-slide-diagonal hidden sm:block`}></div>
-        <div className={`w-[350px] h-[350px] ${theme === 'light' ? 'bg-[#27477D]' : 'bg-[#06CCEC]'} rounded-full absolute lg:-left-[50px] lg:-bottom-[270px] sm:-left-[50px] sm:-bottom-[300px] animate-slide-diagonal-2 hidden sm:block`}></div>
+        <div className={`w-[350px] h-[350px] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'}  rounded-full absolute lg:-left-[200px] lg:-bottom-[225px] sm:-left-[200px] sm:-bottom-[280px]  animate-slide-diagonal hidden sm:block`}></div>
+        <div className={`w-[350px] h-[350px] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'} rounded-full absolute lg:-left-[50px] lg:-bottom-[270px] sm:-left-[50px] sm:-bottom-[300px] animate-slide-diagonal-2 hidden sm:block`}></div>
 
         <div className='sm:block hidden'>
           <div className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold flex items-center space-x-2 absolute bottom-4 left-[10px] '>
@@ -81,11 +57,11 @@ function Herosectionhome() {
       </div>
 
       <div className='sm:w-[40%] flex flex-col justify-center items-center relative sm:mt-0  min-h-[40vh]'>
-        <div className={`lg:w-[600px] lg:h-[620px] sm:w-[400px] sm:h-[420px] w-[120px] h-[120px] ${theme === 'light' ? 'bg-[#27477D]' : 'bg-[#06CCEC]'} rounded-full absolute lg:-right-[120px] lg:-top-[270px] 
+        <div className={`lg:w-[600px] lg:h-[620px] sm:w-[400px] sm:h-[420px] w-[120px] h-[120px] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'} rounded-full absolute lg:-right-[120px] lg:-top-[270px] 
             sm:-right-[100px] sm:-top-[170px]  hidden sm:block `}></div>
 
-        <div className={`w-[200px] h-[200px] ${theme === 'light' ? 'bg-[#27477D]' : 'bg-[#06CCEC]'}  rounded-full absolute left-[-25%] bottom-[-45%] animate-slide-diagonal sm:hidden`}></div>
-        <div className={`w-[200px] h-[200px] ${theme === 'light' ? 'bg-[#27477D]' : 'bg-[#06CCEC]'} rounded-full absolute left-[-7%] bottom-[-55%] animate-slide-diagonal-2 sm:hidden`}></div>
+        <div className={`w-[200px] h-[200px] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'}  rounded-full absolute left-[-25%] bottom-[-45%] animate-slide-diagonal sm:hidden`}></div>
+        <div className={`w-[200px] h-[200px] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'} rounded-full absolute left-[-7%] bottom-[-55%] animate-slide-diagonal-2 sm:hidden`}></div>
 
         <div className='sm:hidden '>
           <div className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold flex items-center space-x-2 absolute bottom-4 left-[10px] '>

@@ -10,14 +10,30 @@ function About() {
 
         <div className='sm:w-[85%] w-full flex flex-wrap items-center p-5 '>
           <p className='text-sm sm:py-0 py-5'>
-            Welcome to Pain Care Clinic, a dedicated center for advanced pain management and physical rehabilitation, led by Dr. Danyal Ahsan (DPT, NMPT, Pain Specialist). Located within City Hospital on Hospital Road, Rahim Yar Khan.
+            Welcome to <span className='font-semibold'>Pain Care Clinic</span>, a dedicated center for<span className='font-semibold'>advanced pain management and physical rehabilitation</span> ,led by
+            <span className='font-semibold bg-gradient-to-r from-indigo-500
+             first-letter: via-purple-500 to-pink-500 rounded-lg px-1 text-white'>
+              Dr. Danyal Ahsan (DPT, NMPT, Pain Specialist)
+            </span>.
+            <span className='font-semibold bg-gradient-to-r from-indigo-500
+             first-letter: via-purple-500 to-pink-500 rounded-lg px-1 text-white'>
+              Located within City Hospital on Hospital Road, Rahim Yar Khan
+            </span> .
           </p>
-          <p className='text-sm sm:py-0 py-5'>Our clinic offers comprehensive, non-surgical treatments for a wide range of musculoskeletal and neurological conditions. We specialize in the care of shoulder, knee, and spine disorders, including shoulder osteoarthritis, frozen shoulder, post-surgical shoulder rehabilitation, and range of motion (ROM) issues, as well as knee osteoarthritis, ACL/PCL tear recovery, gout, and meniscus rehabilitation. For spinal conditions, we treat disc bulges (L4-L5, S1-S2), lumbar straightening, and sciatica.
+          <p className='text-sm sm:py-0 py-5'>Our clinic offers comprehensive, non-surgical treatments for a wide range of musculoskeletal and neurological conditions. We specialize in the care of
+            <span className='font-semibold bg-gradient-to-r from-indigo-500
+             first-letter: via-purple-500 to-pink-500 rounded-lg px-1 text-white'>
+              shoulder, knee, and spine disorders, including shoulder osteoarthritis, frozen shoulder, post-surgical shoulder rehabilitation, and range of motion (ROM) issues, as well as knee osteoarthritis, ACL/PCL tear recovery, gout, and meniscus rehabilitation. For spinal conditions, we treat disc bulges (L4-L5, S1-S2), lumbar straightening, and sciatica.
+            </span>
 
           </p>
 
           <p className='text-sm sm:py-0 py-5'>
-            Beyond orthopedic care, we also support patients with neurological and chronic pain conditions such as cerebral palsy, stroke, Bell's palsy, muscle atrophy, fibromyalgia, peripheral neuropathy, and trigger finger (stenosing tenosynovitis). Our multidisciplinary approach includes cutting-edge procedures like Ozone Therapy, PRP (Platelet-Rich Plasma) Therapy, Biogel Therapy, Acupuncture, Laser Therapy, and expert Physiotherapy, all tailored to restore function, reduce pain, and improve quality of life.
+            Beyond orthopedic care, we also support patients with neurological and chronic pain conditions such as cerebral palsy, stroke, Bell's palsy, muscle atrophy, fibromyalgia, peripheral neuropathy, and trigger finger (stenosing tenosynovitis). Our multidisciplinary approach includes cutting-edge procedures like
+            <span className='font-semibold bg-gradient-to-r from-indigo-500
+             first-letter: via-purple-500 to-pink-500 rounded-lg px-1 text-white'>
+              Ozone Therapy, PRP (Platelet-Rich Plasma) Therapy, Biogel Therapy, Acupuncture, Laser Therapy, and expert Physiotherapy
+            </span>, all tailored to restore function, reduce pain, and improve quality of life.
 
           </p>
           {/* 

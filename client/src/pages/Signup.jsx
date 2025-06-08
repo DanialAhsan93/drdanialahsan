@@ -3,6 +3,7 @@ import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { logoDark, logo } from '../data';
+import Herotitle from '../components/animation/Herotitle';
 
 
 function Signup() {
@@ -29,25 +30,22 @@ function Signup() {
 
             </div>
 
-            <div className='w-full'>
-              <div to={'/'} className='text-4xl font-bold 
-             dark:text-white mt-2'>
+            <div className='w-full mt-6'>
+              <Herotitle
+                color={"bg-gradient-to-r from-indigo-500 first-letter: via-purple-500 to-pink-500"}
+                size={'text-3xl'}
+                sizePara={'text-[18px]'}
+                sizeUrdu={'lg:text-3xl sm:text-2xl'}
 
-                Dr
-                <span className='px-2 bg-gradient-to-r from-indigo-500
-             first-letter: via-purple-500 to-pink-500 rounded-lg text-white ml-1'>
-                  Danyal Ahsan
-                </span>
-
-              </div>
+              />
             </div>
 
           </Link>
 
 
-          <p className='text-sm mt-5'>
+          {/* <p className='text-sm mt-5'>
             DPT, Nmpt & pain speacialist
-          </p>
+          </p> */}
         </div>
         {/* right */}
         <div className='flex-1'>
