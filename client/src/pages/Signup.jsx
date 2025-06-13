@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { logoDark, logo } from '../data';
 import Herotitle from '../components/animation/Herotitle';
@@ -9,12 +9,52 @@ import Herotitle from '../components/animation/Herotitle';
 function Signup() {
   const [loading, setloading] = useState(false)
   const { theme } = useSelector(state => state.theme);
+  const [form, setForm] = useState({})
+  const [errorMessage, setErrorMessage] = useState(null);
 
-  const handleSubmit = () => {
+  const navigate = useNavigate();
+
+  const handleInput = (e) => {
+    setForm({ ...form, [e.target.id]: e.target.value.trim() });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!form.username || !form.email || !form.password || form.username === '' || form.email === '' || form.password === '') {
+      return  setErrorMessage('Please fill out all fields')
+    };
+
+    try {
+      setloading(true);
+      setErrorMessage(null);
+      const res = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      });
+
+      const data = await res.json();
+
+      if (data.success === false) {
+        setloading(false);
+        return setErrorMessage(data.message);
+
+      };
+
+      if (res.ok) {
+        setloading(false);
+        navigate('/signin')
+      }
+
+      console.log(data);
+
+    } catch (error) {
+      console.log(error)
+    }
 
   };
 
-  const handleInput = () => { };
+
 
   return (
     <div className='min-h-screen mt-20'>
@@ -104,13 +144,13 @@ function Signup() {
             </Link>
           </div>
 
-          {/* {
+          {
             errorMessage && (
               <Alert className='mt-5' color={'failure'}>
                 {errorMessage}
               </Alert>
             )
-          } */}
+          }
         </div>
       </div>
     </div>
