@@ -6,6 +6,7 @@ import { Avatar, Button, Dropdown, DropdownItem, Navbar, NavbarCollapse, NavbarL
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../../redux/theme/themeSlice';
 import TitleWave from '../animation/TitleWave';
+import { signOutSuccess } from '../../redux/user/userSlice';
 
 
 function NavbarComponent() {
@@ -15,6 +16,23 @@ function NavbarComponent() {
   const { theme } = useSelector(state => state.theme);
   const { currentUser } = useSelector(state => state.user);
 
+  const handleSignout = async () => {
+    
+    try {
+      const res = await fetch(`/api/user/signout`, {
+        method: 'POST',
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        console.log(data.message);
+      } else {
+        dispatch(signOutSuccess());
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className={` border-b border-gray-200 relative z-50 ${theme === 'light' ? 'bg-white' : 'dark:bg-[rgb(16,23,42)]'}`}>
@@ -41,13 +59,13 @@ function NavbarComponent() {
                   inline
                   label={
                     <Avatar
-                    placeholderInitials={`${currentUser.username[0]}`}
-                    rounded
+                      placeholderInitials={`${currentUser.username[0]}`}
+                      rounded
                     />
                   }
                   dismissOnClick={false}>
                   <DropdownItem>Profile</DropdownItem>
-                  <DropdownItem>Sign out</DropdownItem>
+                  <DropdownItem onClick={handleSignout}>Sign out</DropdownItem>
                 </Dropdown>
 
               </div>
