@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { logo, logoDark } from '../../data';
 import { FaMoon, FaSun } from "react-icons/fa";
-import { Button, Navbar, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
+import { Avatar, Button, Dropdown, DropdownItem, Navbar, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../../redux/theme/themeSlice';
 import TitleWave from '../animation/TitleWave';
@@ -12,8 +12,8 @@ function NavbarComponent() {
   const location = useLocation();
   const path = location.pathname;
   const dispatch = useDispatch();
-  const {theme} = useSelector(state => state.theme);
-  console.log(theme);
+  const { theme } = useSelector(state => state.theme);
+  const { currentUser } = useSelector(state => state.user);
 
 
   return (
@@ -27,19 +27,41 @@ function NavbarComponent() {
         </Link> */}
         <TitleWave theme={theme} logo={logo} logoDark={logoDark} />
 
-
-
         <div className='flex gap-2 md:order-2'>
-          <Button className="text-[#27477D] border" onClick={() => {dispatch(toggleTheme())}}>
+          <Button className="text-[#27477D] border" onClick={() => { dispatch(toggleTheme()) }}>
             {theme === 'light' ? <FaMoon className='sm:w-5 sm:h-3 w-2 h-2' /> : <FaSun className='sm:w-5 sm:h-3 w-2 h-2 dark:text-gray-200' />}
-            
+
           </Button>
 
-          <Link to={'/signin'}>
-            <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-cyan-300 dark:focus:ring-cyan-800 text-[12px] sm:text-[16px] py-1 px-1 sm:py-2 sm:px-3">
-              Sign in
-            </Button>
-          </Link>
+          {
+            currentUser ? (
+              <div>
+                <Dropdown
+                  arrowIcon={false}
+                  inline
+                  label={
+                    <Avatar
+                    placeholderInitials={`${currentUser.username[0]}`}
+                    rounded
+                    />
+                  }
+                  dismissOnClick={false}>
+                  <DropdownItem>Profile</DropdownItem>
+                  <DropdownItem>Sign out</DropdownItem>
+                </Dropdown>
+
+              </div>
+            ) :
+              (
+                <Link to={'/signin'}>
+                  <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-cyan-300 dark:focus:ring-cyan-800 text-[12px] sm:text-[16px] py-1 px-1 sm:py-2 sm:px-3">
+                    Sign in
+                  </Button>
+                </Link>
+              )
+          }
+
+
 
         </div>
 
@@ -56,8 +78,8 @@ function NavbarComponent() {
           <Link to={'/services'} className={`${path === '/services' ? 'text-[#06CCEC]' : 'text-[#27477D]dark:text-gray-200'} sm:border-b-0 border-b-2 pb-0 mt-2 font-semibold sm:mt-0`}>Services</Link>
           <Link to={'/contact'} className={`${path === '/contact' ? 'text-[#06CCEC]' : 'text-[#27477D] dark:text-gray-200'} sm:border-b-0 border-b-2 pb-0 mt-2 font-semibold sm:mt-0`}>Contact</Link>
         </NavbarCollapse>
-      </Navbar>
-    </div>
+      </Navbar >
+    </div >
 
   )
 }
