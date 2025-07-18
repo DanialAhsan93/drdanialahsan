@@ -18,6 +18,7 @@ import {
   newdoc,
 } from '../../data/index.js';
 import Herotitle from '../animation/Herotitle.jsx';
+import Slider from '../carousel/Slider.jsx';
 
 function Herosectionhome() {
 
@@ -31,7 +32,7 @@ function Herosectionhome() {
 
         <div className='relative'>
           <Herotitle
-            color={`${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' :'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'} `}
+            color={`${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'} `}
             size={'lg:text-5xl sm:text-2xl text-3xl'}
             sizePara={'lg:text-[28px] text-[16px]'}
             sizeUrdu={'lg:text-4xl sm:text-2xl'}
@@ -60,8 +61,8 @@ function Herosectionhome() {
         <div className={`lg:w-[600px] lg:h-[620px] sm:w-[400px] sm:h-[420px] w-[120px] h-[120px] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'} rounded-full absolute lg:-right-[120px] lg:-top-[270px] 
             sm:-right-[100px] sm:-top-[170px]  hidden sm:block `}></div>
 
-        <div className={`w-[200px] h-[200px] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'}  rounded-full absolute left-[-25%] bottom-[-45%] animate-slide-diagonal sm:hidden`}></div>
-        <div className={`w-[200px] h-[200px] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'} rounded-full absolute left-[-7%] bottom-[-55%] animate-slide-diagonal-2 sm:hidden`}></div>
+        <div className={`w-[200px] h-[200px] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'}  rounded-full absolute left-[-25%] bottom-[-35%] animate-slide-diagonal sm:hidden`}></div>
+        <div className={`w-[200px] h-[200px] ${theme === 'light' ? 'bg-gradient-to-br from-purple-600 to-blue-500 text-white hover:bg-gradient-to-bl focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800'} rounded-full absolute left-[-4%] bottom-[-40%] animate-slide-diagonal-2 sm:hidden`}></div>
 
         <div className='sm:hidden '>
           <div className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold flex items-center space-x-2 absolute bottom-4 left-[10px] '>
@@ -72,8 +73,10 @@ function Herosectionhome() {
           </div>
         </div>
 
-        <div className='w-full'>
-          <div className='w-full flex justify-center'>
+        <div className='w-full sm:pb-0 sm:pt-0 pb-14 pt-5'>
+            <Slider />
+
+          {/* <div className='w-full flex justify-center'>
             <div className='pr-5'>
               <img src={back} alt="logo" className='lg:w-[150px] lg:h-[150px] w-[100px] h-[100px] lg:rounded-tl-[7.5rem] rounded-tl-[5.5rem]  animate-move-bottom-right' />
             </div>
@@ -89,7 +92,8 @@ function Herosectionhome() {
             <div className='pl-5 w-[50%]'>
               <img src={shoulder} alt="logo" className='lg:w-[150px] lg:h-[150px] w-[100px] h-[100px] lg:rounded-br-[7.5rem] animate-move-top-left rounded-br-[5.5rem]' />
             </div>
-          </div>
+          </div> */}
+
         </div>
 
 

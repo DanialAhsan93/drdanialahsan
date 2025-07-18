@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logoDark, logo } from '../data';
 import Herotitle from '../components/animation/Herotitle';
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
+import OAuth from '../components/OAuth';
 
 
 function Signin() {
@@ -124,7 +125,7 @@ function Signin() {
               }
 
             </Button>
-            {/* <OAuth /> */}
+            <OAuth />
           </form>
 
           <div className='flex gap-2 text-sm mt-5'>

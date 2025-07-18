@@ -17,7 +17,7 @@ function NavbarComponent() {
   const { currentUser } = useSelector(state => state.user);
 
   const handleSignout = async () => {
-    
+
     try {
       const res = await fetch(`/api/user/signout`, {
         method: 'POST',
@@ -32,7 +32,8 @@ function NavbarComponent() {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
+
 
   return (
     <div className={` border-b border-gray-200 relative z-50 ${theme === 'light' ? 'bg-white' : 'dark:bg-[rgb(16,23,42)]'}`}>
@@ -64,7 +65,9 @@ function NavbarComponent() {
                     />
                   }
                   dismissOnClick={false}>
-                  <DropdownItem>Profile</DropdownItem>
+                  <Link to={'/dashboard?tab=profile'}>
+                    <DropdownItem >Profile</DropdownItem>
+                  </Link>
                   <DropdownItem onClick={handleSignout}>Sign out</DropdownItem>
                 </Dropdown>
 

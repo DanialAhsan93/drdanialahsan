@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -11,15 +11,16 @@ import NavbarComponent from './components/header&navbar/NavbarComponent';
 import Services from './pages/Services';
 import Footercomp from './components/footercomp/Footercomp';
 import ScrollToTop from './components/ScrollToTop';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
-      <ScrollToTop />
-       <Header />
-       <NavbarComponent />
+        <ScrollToTop />
+        <Header />
+        <NavbarComponent />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
@@ -27,7 +28,9 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/signin' element={<Signin />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route element={<PrivateRoute />}>
+            <Route path='/dashboard' element={<Dashboard />} />
+          </Route>
         </Routes>
         <Footercomp />
       </BrowserRouter>

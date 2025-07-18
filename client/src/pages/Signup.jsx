@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { logoDark, logo } from '../data';
 import Herotitle from '../components/animation/Herotitle';
+import OAuth from '../components/OAuth';
 
 
 function Signup() {
@@ -134,7 +135,7 @@ function Signup() {
               }
 
             </Button>
-            {/* <OAuth /> */}
+            <OAuth />
           </form>
 
           <div className='flex gap-2 text-sm mt-5'>
