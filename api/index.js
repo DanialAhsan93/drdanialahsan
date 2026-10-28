@@ -3,8 +3,14 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import userRouter from './routes/user.routes.js';
 import authRouter from './routes/auth.routes.js'
+import dns from 'node:dns';
 
 dotenv.config();
+
+console.log('Env file loaded:', dotenv.config().error ? 'Error' : 'OK');
+console.log('MONGO exists:', Boolean(process.env.MONGO));
+
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 mongoose.connect(process.env.MONGO)
   .then(() => {
@@ -17,6 +23,10 @@ mongoose.connect(process.env.MONGO)
 const app = express();
 
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('API is running successfully!');
+});
 
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter)
