@@ -27,3 +27,5 @@ Thumbs.db
 
 # Optional: If using TypeScript
 *.tsbuildinfo
+node_modules/
+**/node_modules/
