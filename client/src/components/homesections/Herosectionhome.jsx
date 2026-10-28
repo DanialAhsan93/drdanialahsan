@@ -74,9 +74,9 @@ function Herosectionhome() {
         </div>
 
         <div className='w-full sm:pb-0 sm:pt-0 pb-14 pt-5'>
-            <Slider />
+            {/* <Slider /> */}
 
-          {/* <div className='w-full flex justify-center'>
+          <div className='w-full flex justify-center'>
             <div className='pr-5'>
               <img src={back} alt="logo" className='lg:w-[150px] lg:h-[150px] w-[100px] h-[100px] lg:rounded-tl-[7.5rem] rounded-tl-[5.5rem]  animate-move-bottom-right' />
             </div>
@@ -92,7 +92,9 @@ function Herosectionhome() {
             <div className='pl-5 w-[50%]'>
               <img src={shoulder} alt="logo" className='lg:w-[150px] lg:h-[150px] w-[100px] h-[100px] lg:rounded-br-[7.5rem] animate-move-top-left rounded-br-[5.5rem]' />
             </div>
-          </div> */}
+
+             
+          </div>
 
         </div>
 
